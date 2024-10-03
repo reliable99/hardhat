@@ -3,7 +3,7 @@ import "@nomicfoundation/hardhat-toolbox";
 import { vars } from "hardhat/config";
 
 const ALCHEMY_API_KEY = vars.get("ALCHEMY_API_KEY")
-// const ETHERSCAN = vars.get("ETHERSCAN");
+const ETHERSCAN_API_KEY = vars.get("ETHERSCAN_API_KEY");
 
 const config: HardhatUserConfig = {
   solidity: "0.8.27",
@@ -14,9 +14,9 @@ const config: HardhatUserConfig = {
       accounts: vars.has("PRIVATE_KEY") ? [vars.get("PRIVATE_KEY")] : []
     }
   }, 
-  // etherscan: {
-  //   apiKey: ETHERSCAN
-  //   }
+  etherscan: {
+    apiKey: ETHERSCAN_API_KEY,
+    },
 };
 
 export default config;
